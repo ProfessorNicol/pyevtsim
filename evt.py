@@ -319,6 +319,4 @@ def nxtEvt_ID() -> int:
     return evt_ID
 
 # EvtMgr is a global variable, accessed by all the code that schedules events.
-
-
 EvtMgr = EvtList()

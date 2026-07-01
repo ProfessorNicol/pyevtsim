@@ -120,17 +120,14 @@ class Trace():
         # 
         for idx in range(start, len(samples)):
             sum += samples[idx]
-
+            sum2 += samples[idx]*samples[idx]
+	
         if n > 1:
             # compute the average of the samples and average of the samples squared
             mean = sum / n
+            mean2 = sum2 / n
 
-            sum = 0.0
-            for idx in range(start, len(samples)):
-                s = samples[idx]
-                sum += (s-mean)*(s-mean)
-       
-            var = sum/(n-1) 
+            var = (float(n)/(n-1))*(mean2 - mean*mean) 
             std = math.sqrt(var)
 
             print(
